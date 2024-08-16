@@ -6,9 +6,9 @@ using namespace std;
 
 int solution(vector<vector<int>> triangle) {
     int answer;
-    int dp[501][501]={0};
+    int dp[501][501]={0}; //dp 초기화
     
-    for (int i = 0; i < triangle.size(); i++) {
+    for (int i = 0; i < triangle.size(); i++) { //dp배열 삼각형이랑 똑같이 만들기
         for (int j = 0; j <= i; j++) {
             dp[i][j] = triangle[i][j];
         }
