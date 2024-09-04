@@ -6,7 +6,7 @@ int N, S;
 int ans = 0;
 
 void dfs(int index, int sum) {
-    if (index == N) {
+    if (index == N) { // 배열의 모든 원소를 고려한 상태
         if (sum == S) {
             ans++;
         }
