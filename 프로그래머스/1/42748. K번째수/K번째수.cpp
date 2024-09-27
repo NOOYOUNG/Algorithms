@@ -7,13 +7,15 @@ using namespace std;
 vector<int> solution(vector<int> array, vector<vector<int>> commands) {
     vector<int> answer;
     
-    for(int i=0; i<commands.size(); i++){
-        vector<int> temp;
-        for(int j=commands[i][0]-1; j<commands[i][1]; j++){
-            temp.push_back(array[j]);
+    for(auto c:commands){
+        vector<int> arr;
+        
+        for(int i=c[0]-1; i<c[1]; i++){
+            arr.push_back(array[i]);
         }
-        sort(temp.begin(), temp.end());
-        answer.push_back(temp[commands[i][2]-1]);
+        
+        sort(arr.begin(), arr.end());
+        answer.push_back(arr[c[2]-1]);
     }
     
     return answer;
