@@ -26,7 +26,7 @@ int solution(int m, int n, vector<vector<int>> puddles) {
         }
     }
     
-    answer=road[m][n]%1000000007;
+    answer=road[m][n];
     
     return answer;
 }
