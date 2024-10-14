@@ -10,7 +10,8 @@ int dfs(int v) {
 	int ans = 0;
 	for (int i = 0; i < adj[v].size(); i++) {
 		if (!visited[adj[v][i]]) {
-			ans += 1 + dfs(adj[v][i]);
+			// 현재 방문한 노드(1)를 카운트하고, 그 노드의 자식 노드에서 탐색한 결과를 더함
+			ans += 1 + dfs(adj[v][i]); 
 		}
 	}
 	return ans;
