@@ -35,13 +35,14 @@ void dfs(int idx, int count) {
 		answer = min(answer, getDistance());
 		return;
 	}
-	for (int i = idx; i < chickens.size(); i++) {
-		if (!visited[i]) {
-			visited[i] = true;
-			dfs(i + 1, count + 1);
-			visited[i] = false;
-		}
-	}
+	// DFS로 백트래킹 수행, 현재 인덱스 이후의 치킨집들 중에서 선택
+    	for (size_t i = idx; i < chickens.size(); i++) {
+        	if (!visited[i]) { // 선택되지 않은 치킨집이면
+            		visited[i] = true; // 해당 치킨집 선택
+            		dfs(i + 1, count + 1); // 재귀 호출로 다음 치킨집 선택
+            		visited[i] = false; // 선택 해제하고 다음 경우를 탐색
+        	}
+    	}
 }
 
 int main() {
