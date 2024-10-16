@@ -25,11 +25,11 @@ int main() {
 			}
 		}
 
-		if (sum >= M) {
+		if (sum >= M) { // 잘린 나무의 총 길이가 M보다 크거나 같으면 높이를 더 높여도 되므로 left 조정
 			H = mid;
 			left = mid + 1;
 		}
-		else {
+		else { // 나무가 부족하므로 높이를 낮추기 위해 right 조정
 			right = mid - 1;
 		}
 	}
